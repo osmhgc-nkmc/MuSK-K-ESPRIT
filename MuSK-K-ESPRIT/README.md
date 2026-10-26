@@ -8,7 +8,6 @@ This repository hosts the official implementation, datasets, and structural coor
 
 > **Objective Identification of Basal, Primed, and Active Conformational States in Wild-Type Human MuSK Kinase via K-ESPRIT: An AlphaFold3 Ensemble and Activation-Loop Topology Mapping Framework**  
 > Osamu Higuchi (2026)  
-> *Computers in Biology and Medicine*
 
 ---
 
