@@ -1,0 +1,32 @@
+# UCSF ChimeraX Command Script: Overlay of MuSK WT Medoids
+# Model #27 (Closed, Blue), Model #45 (Primed, Yellow), Model #37 (Open, Red)
+
+# 1. 3つのメドイド構造の読み込み (相対パス)
+open ../structures/medoids/WT_Model27_closed.cif
+open ../structures/medoids/WT_Model45_primed.cif
+open ../structures/medoids/WT_Model37_active.cif
+
+# 2. C-lobe invariant core (alphaE / alphaF: 696-719, 770-795) で重ね合わせ
+matchmaker #2/A:696-719,770-795 to #1/A:696-719,770-795
+matchmaker #3/A:696-719,770-795 to #1/A:696-719,770-795
+
+# 3. 全体のリボン表示とカラーリング
+hide atoms
+show cartoons
+color #1 #4A6984  # WT #27: Slate Blue (Closed)
+color #2 #E0A93B  # WT #45: Gold/Yellow (Primed)
+color #3 #C0503E  # WT #37: Terracotta/Red (Open)
+
+# 4. Activation loop (743-765) をハイライト
+color #1/A:743-765 #2B4C7E
+color #2/A:743-765 #D48806
+color #3/A:743-765 #A82810
+
+# 5. R-spine 残基 (723, 744, 630, 641) および Latch (754, 801) の側鎖を表示
+show :723,744,630,641,754,801 atoms
+style :723,744,630,641,754,801 stick
+
+# 6. 水素結合の表示 (D754 - Q801 latch)
+hbonds :754,801 reveal true color green dashes 5
+
+view
